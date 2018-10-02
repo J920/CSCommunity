@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/challing"
+        android:icon="@drawable/challing"
+        android:title="العمليات السابقة" />
+
+    <item
+        android:id="@+id/navigation_money"
+        android:icon="@drawable/trophy"
+        android:title="العمليات السابقة" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/quistion"
+        android:title="الرئيسية" />
+
+    <item
+        android:id="@+id/navigation_add"
+        android:icon="@drawable/project"
+        android:title="إضافة قطعة" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profile"
+        android:title="الملف الشخصي" />
+
+</menu>
