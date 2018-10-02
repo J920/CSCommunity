@@ -3,22 +3,21 @@ package com.android.team920.cscommunity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.android.team920.cscommunity.ProfileAdapter;
 
 
-
-
-
-
-public class ProfileFragment extends Fragment implements AnswerFragment.OnFragmentInteractionListener,
-        YourQuestionsFragment.OnFragmentInteractionListener{
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link YourQuestionsFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link YourQuestionsFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class YourQuestionsFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +29,7 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
     private OnFragmentInteractionListener mListener;
 
-    public ProfileFragment() {
+    public YourQuestionsFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +39,11 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
+     * @return A new instance of fragment YourQuestionsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
+    public static YourQuestionsFragment newInstance(String param1, String param2) {
+        YourQuestionsFragment fragment = new YourQuestionsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,53 +64,9 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_your_questions, container, false);
     }
 
-    @Override
-    public void onViewCreated(View view,  Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-        TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("أجوبتك"));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.quistion));
-        tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
-
-        final ViewPager viewPager = view.findViewById(R.id.container_profile);
-        ProfileAdapter adapter = new ProfileAdapter(getFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-
-        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                viewPager.setCurrentItem(tab.getPosition());
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
-
-
-    // TODO: Rename method, update argument and hook method into UI event
 
     /**
      * This interface must be implemented by activities that contain this

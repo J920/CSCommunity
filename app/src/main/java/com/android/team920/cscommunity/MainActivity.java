@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_profile:
                     getSupportFragmentManager()
                            .beginTransaction()
-                           .add(R.id.container1,new ProfileFragment(),"profileFragment()")
+                           .replace(R.id.container1,new ProfileFragment(),"profileFragment()")
                             .commit();
                     return true;
 
@@ -31,20 +31,20 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_project:
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.container1,new ProjectFragment(),"ProjectFragment()")
+                            .replace(R.id.container1,new ProjectFragment(),"ProjectFragment()")
                             .commit();
                     return true;
                 case R.id.navigation_quistion:
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.container1,new QuestionFragment(),"QuestionFragment()")
+                            .replace(R.id.container1,new QuestionFragment(),"QuestionFragment()")
                             .commit();
                     return true;
 
                 case R.id.navigation_trophy:
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.container1,new TrophyFragment(),"TrophyFragment()")
+                            .replace(R.id.container1,new TrophyFragment(),"TrophyFragment()")
                             .commit();
                     return true;
 
