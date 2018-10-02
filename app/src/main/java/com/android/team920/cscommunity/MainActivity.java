@@ -11,28 +11,48 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
+                //frofile
                 case R.id.navigation_profile:
-                    mTextMessage.setText("profile");
+                    getSupportFragmentManager()
+                           .beginTransaction()
+                           .add(R.id.container1,new ProfileFragment(),"profileFragment()")
+                            .commit();
                     return true;
+
+                //
                 case R.id.navigation_project:
-                    mTextMessage.setText("project");
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.container1,new ProjectFragment(),"ProjectFragment()")
+                            .commit();
                     return true;
                 case R.id.navigation_quistion:
-                    mTextMessage.setText("quistion");
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.container1,new QuestionFragment(),"QuestionFragment()")
+                            .commit();
                     return true;
 
                 case R.id.navigation_trophy:
-                    mTextMessage.setText("trophy");
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.container1,new TrophyFragment(),"TrophyFragment()")
+                            .commit();
                     return true;
 
                 case R.id.navigation_challing:
-                    mTextMessage.setText("challing");
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .add(R.id.container1,new ChallengeFragment(),"ChallengeFragment()")
+                            .commit();
                     return true;
             }
             return false;
@@ -50,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        // this line to tell the navigation to start from the profile
         navigation.setSelectedItemId(R.id.navigation_profile);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
