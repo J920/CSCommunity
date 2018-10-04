@@ -3,7 +3,9 @@ package com.android.team920.cscommunity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +70,44 @@ public class TrophyFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
+    @Override
+    public void onViewCreated(View view,  Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        TabLayout tabLayout = view.findViewById(R.id.trophy_tabs);
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_answer_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon));
+        tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
+
+        final ViewPager viewPager = view.findViewById(R.id.container_trophy);
+        TrophyAdapter adapter = new TrophyAdapter(getFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+
+        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                viewPager.setCurrentItem(tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+    }
+
 
 
     /**
