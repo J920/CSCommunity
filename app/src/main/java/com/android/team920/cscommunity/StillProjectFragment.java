@@ -3,9 +3,7 @@ package com.android.team920.cscommunity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +12,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ProjectFragment.OnFragmentInteractionListener} interface
+ * {@link StillProjectFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ProjectFragment#newInstance} factory method to
+ * Use the {@link StillProjectFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProjectFragment extends Fragment {
+public class StillProjectFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,14 +29,21 @@ public class ProjectFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ProjectFragment() {
+    public StillProjectFragment() {
         // Required empty public constructor
     }
 
-
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment StillProjectFragment.
+     */
     // TODO: Rename and change types and number of parameters
-    public static ProjectFragment newInstance(String param1, String param2) {
-        ProjectFragment fragment = new ProjectFragment();
+    public static StillProjectFragment newInstance(String param1, String param2) {
+        StillProjectFragment fragment = new StillProjectFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,48 +64,20 @@ public class ProjectFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_project, container, false);
+        return inflater.inflate(R.layout.fragment_still_project, container, false);
     }
 
 
-    @Override
-    public void onViewCreated(View view,  Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-        TabLayout tabLayout = view.findViewById(R.id.project_tabs);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.project_done_icon));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.project_still_icon));
-        tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
-
-        final ViewPager viewPager = view.findViewById(R.id.container_project);
-        ProfileAdapter adapter = new ProfileAdapter(getFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-
-        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                viewPager.setCurrentItem(tab.getPosition());
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-    }
-
-
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
