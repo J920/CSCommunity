@@ -71,6 +71,7 @@ public class ProjectFragment extends Fragment {
         TabLayout tabLayout = view.findViewById(R.id.project_tabs);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.project_done_icon));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.project_still_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.project_group_icon));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = view.findViewById(R.id.container_project);

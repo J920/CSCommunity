@@ -30,6 +30,9 @@ public class ProjectAdapter  extends FragmentStatePagerAdapter {
             case 1:
                 StillProjectFragment tap2 = new StillProjectFragment();
                 return tap2;
+            case 2:
+                GroupProjectFragment tap3 = new GroupProjectFragment();
+                return tap3;
 
             default:
                 return null;
