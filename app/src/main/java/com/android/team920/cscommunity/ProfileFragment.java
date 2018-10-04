@@ -74,8 +74,8 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
 
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
-        tabLayout.addTab(tabLayout.newTab().setText("أجوبتك"));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.quistion));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_answer_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = view.findViewById(R.id.container_profile);
