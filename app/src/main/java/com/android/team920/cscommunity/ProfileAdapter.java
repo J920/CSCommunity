@@ -34,7 +34,10 @@ public class ProfileAdapter extends FragmentStatePagerAdapter{
                 case 1:
                     YourQuestionsFragment tap2 = new YourQuestionsFragment();
                     return tap2;
+                case 2:
+                    YourProjectFragment tap3 = new YourProjectFragment();
 
+                    return tap3;
                 default:
                     return null;
             }
