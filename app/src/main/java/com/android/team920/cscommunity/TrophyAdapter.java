@@ -19,15 +19,15 @@ public class TrophyAdapter extends FragmentStatePagerAdapter {
         {
 
             case 0:
-                AnswerFragment tap1 = new AnswerFragment();
+                WeekTrophyFragment tap1 = new WeekTrophyFragment();
                 return  tap1;
 
             case 1:
-                YourQuestionsFragment tap2 = new YourQuestionsFragment();
+                MonthTrophyFragment tap2 = new MonthTrophyFragment();
                 return tap2;
 
             case 2:
-                YourLikeQuesitonsFragment tap3 = new YourLikeQuesitonsFragment();
+                YearTrophyFragment tap3 = new YearTrophyFragment();
                 return tap3;
 
             default:
