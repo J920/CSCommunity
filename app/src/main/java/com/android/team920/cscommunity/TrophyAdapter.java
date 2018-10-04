@@ -4,14 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class ProjectAdapter  extends FragmentStatePagerAdapter {
-
-
-
-
-
+public class TrophyAdapter extends FragmentStatePagerAdapter {
     int mNoOfTabs;
-    public ProjectAdapter(FragmentManager fm, int NumberOfTabs) {
+    public TrophyAdapter(FragmentManager fm, int NumberOfTabs) {
         super(fm);
         this.mNoOfTabs = NumberOfTabs;
 
@@ -24,14 +19,15 @@ public class ProjectAdapter  extends FragmentStatePagerAdapter {
         {
 
             case 0:
-                DoneProjectFragment tap1 = new DoneProjectFragment();
+                AnswerFragment tap1 = new AnswerFragment();
                 return  tap1;
 
             case 1:
-                StillProjectFragment tap2 = new StillProjectFragment();
+                YourQuestionsFragment tap2 = new YourQuestionsFragment();
                 return tap2;
+
             case 2:
-                GroupProjectFragment tap3 = new GroupProjectFragment();
+                YourLikeQuesitonsFragment tap3 = new YourLikeQuesitonsFragment();
                 return tap3;
 
             default:
@@ -45,4 +41,5 @@ public class ProjectAdapter  extends FragmentStatePagerAdapter {
         return mNoOfTabs;
     }
 }
+
 
