@@ -77,8 +77,8 @@ public class TrophyFragment extends Fragment {
 
         TabLayout tabLayout = view.findViewById(R.id.trophy_tabs);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.trophy_week_icon));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.trophy_month_icon));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.trophy_year_icon));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = view.findViewById(R.id.container_trophy);

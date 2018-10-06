@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_trophy"
         android:icon="@drawable/trophy"
-        android:title="قوائم الصدارة" />
+        android:title="الرتب" />
 
     <item
         android:id="@+id/navigation_quistion"
@@ -23,6 +23,6 @@
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/profile"
-        android:title="الملف الشخصي" />
+        android:title="الملف" />
 
 </menu>
