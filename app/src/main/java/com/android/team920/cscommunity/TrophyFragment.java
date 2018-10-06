@@ -72,8 +72,8 @@ public class TrophyFragment extends Fragment {
             final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
 
             // clone the inflater using the ContextThemeWrapper
-            LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-            return localInflater.inflate(R.layout.fragment_trophy, container, false);
+            inflater = inflater.cloneInContext(contextThemeWrapper);
+            return inflater.inflate(R.layout.fragment_trophy, container, false);
 
 
 
@@ -82,8 +82,8 @@ public class TrophyFragment extends Fragment {
             final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
 
             // clone the inflater using the ContextThemeWrapper
-            LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-            return localInflater.inflate(R.layout.fragment_trophy, container, false);
+            inflater = inflater.cloneInContext(contextThemeWrapper);
+            return inflater.inflate(R.layout.fragment_trophy, container, false);
         }
     }
 

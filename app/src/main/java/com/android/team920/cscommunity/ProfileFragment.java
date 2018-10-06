@@ -74,8 +74,8 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
                 final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
 
     // clone the inflater using the ContextThemeWrapper
-    LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-            return localInflater.inflate(R.layout.fragment_profile, container, false);
+     inflater = inflater.cloneInContext(contextThemeWrapper);
+            return inflater.inflate(R.layout.fragment_profile, container, false);
 
 
 
@@ -84,8 +84,8 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
             final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
 
             // clone the inflater using the ContextThemeWrapper
-            LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-            return localInflater.inflate(R.layout.fragment_profile, container, false);
+            inflater = inflater.cloneInContext(contextThemeWrapper);
+            return inflater.inflate(R.layout.fragment_profile, container, false);
         }
 
 
@@ -116,6 +116,7 @@ public void refresh(LayoutInflater inflater){
         super.onViewCreated(view, savedInstanceState);
 
         nightMode=view.findViewById(R.id.switch1);
+       // nightMode.setThumbDrawable(R.drawable.day_icon);
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
 
             nightMode.setChecked(true);

@@ -65,8 +65,8 @@ public class ProjectFragment extends Fragment {
         final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
 
         // clone the inflater using the ContextThemeWrapper
-        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-        return localInflater.inflate(R.layout.fragment_project, container, false);
+            inflater = inflater.cloneInContext(contextThemeWrapper);
+        return inflater.inflate(R.layout.fragment_project, container, false);
 
 
 
@@ -75,8 +75,8 @@ public class ProjectFragment extends Fragment {
         final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
 
         // clone the inflater using the ContextThemeWrapper
-        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-        return localInflater.inflate(R.layout.fragment_project, container, false);
+            inflater = inflater.cloneInContext(contextThemeWrapper);
+        return inflater.inflate(R.layout.fragment_project, container, false);
     }
     }
 

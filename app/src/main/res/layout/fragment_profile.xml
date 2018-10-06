@@ -72,15 +72,14 @@
                     android:id="@+id/switch1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="300dp"
-                    android:layout_marginStart="2.5dp"
-                    android:text="الوضع الليلي"
-                    android:background="?attr/backgroundcolor"
-                    android:textColor="?attr/textcolor"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="40dp"
+                    android:thumb="@drawable/mode_switch"
+                    android:trackTint="@color/white"
+
+                    android:splitTrack="false"
+                    app:layout_constraintVertical_bias="1.0" />
 
 
             </android.support.constraint.ConstraintLayout>
