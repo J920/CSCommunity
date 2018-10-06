@@ -3,16 +3,24 @@ package com.android.team920.cscommunity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.SearchView;
+import android.widget.TextView;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link QuestionFragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link QuestionFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -67,7 +75,36 @@ public class QuestionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_question, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final SearchView searchBar= view.findViewById(R.id.question_search);
+//        final NestedScrollView scrollPage= view.findViewById(R.id.question_scroll);
+        final TextView scrollPage= view.findViewById(R.id.q_t);
+
+
+        searchBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchBar.setIconified(false);
+            }
+        });
+
+        scrollPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                searchBar.setIconified(true);
+                searchBar.setIconified(true);
+            }
+        });
+
+
+    }
+
+
 
 
     /**

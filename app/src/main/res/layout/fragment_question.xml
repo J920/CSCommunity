@@ -8,63 +8,47 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="58dp">
+        android:layout_height="70dp">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
 
-            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:toolbarId="@+id/toolbar">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="371dp"
-                    android:layout_height="wrap_content"
+                <SearchView
+                    android:id="@+id/question_search"
+                    android:layout_width="381dp"
+                    android:layout_height="41dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:gravity="center"
                     android:background="@color/white"
-                    android:ems="10"
-                    android:hint="           البحث"
-                    android:inputType="textPersonName"
+                    android:clickable="true"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.666" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="34dp"
-                    android:layout_height="35dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@android:drawable/ic_search_category_default"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/editText2"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/editText2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </android.support.constraint.ConstraintLayout>
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/question_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+        android:clickable="true">
 
         <android.support.constraint.ConstraintLayout
             android:background="@color/white"
@@ -74,8 +58,10 @@
 
             <!-- TODO: Update blank fragment layout -->
             <TextView
+                android:id="@+id/q_t"
                 android:layout_width="match_parent"
                 android:layout_height="330dp"
+                android:clickable="true"
                 android:text=" صفحـــه الاسئله " />
 
         </android.support.constraint.ConstraintLayout>
@@ -93,3 +79,43 @@
         app:backgroundTint="@color/whiteGrean"
         app:rippleColor="?attr/actionMenuTextColor" />
 </android.support.design.widget.CoordinatorLayout>
+
+
+<!--<resources xmlns:tools="http://schemas.android.com/tools">-->
+
+<!--&lt;!&ndash; Light/Day Mode application theme. &ndash;&gt;-->
+<!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/dark_blue</item>-->
+    <!--<item name="colorPrimaryDark">@color/dark_blue</item>-->
+    <!--<item name="colorAccent">@color/dark_blue</item>-->
+
+
+    <!--<item name="android:fontFamily">@font/cairo_regular</item>-->
+
+<!--</style>-->
+
+
+<!--&lt;!&ndash; Dark/Night Mode application theme. &ndash;&gt;-->
+<!--<style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">#151</item>-->
+    <!--<item name="colorPrimaryDark">#141</item>-->
+    <!--<item name="android:windowBackground">#131</item>-->
+    <!--<item name="colorAccent">@color/dark_blue</item>-->
+
+
+    <!--<item name="android:fontFamily">@font/cairo_regular</item>-->
+
+<!--</style>-->
+
+<!--<style name="AppTheme.NoActionBar">-->
+    <!--<item name="windowActionBar">false</item>-->
+    <!--<item name="windowNoTitle">true</item>-->
+<!--</style>-->
+
+<!--<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+<!--<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+<!--</resources>-->

@@ -1,5 +1,6 @@
 package com.android.team920.cscommunity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
