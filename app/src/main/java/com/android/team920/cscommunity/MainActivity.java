@@ -73,8 +73,12 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             //navigation.setBackgroundColor(R.attr.cardbackground);
-            navigation.setBackgroundColor(Color.parseColor("#303030"));
-            navigation.setAlpha(1f);
+            navigation.setBackgroundColor(Color.parseColor("#424242"));
+            //navigation.setAlpha(1f);
+        }else{
+
+            navigation.setBackgroundColor(Color.parseColor("#ffffff"));
+
         }
 
 

@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 
 import com.android.team920.cscommunity.ProfileAdapter;
@@ -28,7 +29,8 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
         YourQuestionsFragment.OnFragmentInteractionListener{
 
 
-     DayNightSwitch nightMode;
+     //private DayNightSwitch nightMode;
+    ImageView setting;
 
 
 
@@ -69,7 +71,7 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
                              Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
 
-                final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
+                 Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
 
     // clone the inflater using the ContextThemeWrapper
      inflater = inflater.cloneInContext(contextThemeWrapper);
@@ -79,7 +81,7 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
 
         }else{
-            final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
+             Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
 
             // clone the inflater using the ContextThemeWrapper
             inflater = inflater.cloneInContext(contextThemeWrapper);
@@ -100,48 +102,71 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
         super.onViewCreated(view, savedInstanceState);
 
-        nightMode= (DayNightSwitch) view.findViewById(R.id.switch1);
+       // nightMode= (DayNightSwitch) view.findViewById(R.id.switch1);
        // nightMode.setThumbDrawable(R.drawable.day_icon);
+
+        setting= view.findViewById(R.id.setting);
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_answer_icon));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
-//        nightMode.setDuration(450);
-
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-            nightMode.setIsNight(true);
-        }
-
-        nightMode.setListener(new DayNightSwitchListener() {
+        setting.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSwitch(boolean isNight) {
+            public void onClick(View view) {
 
-                if(isNight){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-
-
-
-                    Intent intent=new Intent(getContext(),MainActivity.class);
-                    getContext().startActivity(intent);
-                    getActivity().finish();
-
-
-                }else{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-                    Intent intent=new Intent(getContext(),MainActivity.class);
-                    getContext().startActivity(intent);
-                    getActivity().finish();
-
-
-
-                }
+                Intent i = new Intent(getContext(),Setting.class);
+                startActivity(i);
 
             }
         });
+
+//TODO Night swich with library begin
+//        nightMode.setDuration(2000);
+//
+//        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+//            nightMode.setIsNight(true);
+//        }
+//
+//        nightMode.setListener(new DayNightSwitchListener() {
+//            @Override
+//            public void onSwitch(boolean isNight) {
+//
+//                if(isNight){
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//
+//
+//
+//
+//                    Intent intent=new Intent(getContext(),MainActivity.class);
+//                    getContext().startActivity(intent);
+//                    getActivity().finish();
+//
+//
+//                }else{
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//
+//                    Intent intent=new Intent(getContext(),MainActivity.class);
+//                    getContext().startActivity(intent);
+//                    getActivity().finish();
+//
+//
+//
+//                }
+//
+//            }
+//        });
+
+
+        //TODO Night swich with library end]
+
+
+
+
+
+
+
 
 //        nightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override

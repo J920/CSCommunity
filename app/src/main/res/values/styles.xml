@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryDark">@color/dark_blue</item>
-        <item name="colorAccent">#ffe</item>
+        <item name="colorAccent">@color/dark_blue</item>
         <item name="backgroundcolor">@color/white</item>
         <item name="cardbackground">@color/white</item>
         <item name="textcolor">#000</item>

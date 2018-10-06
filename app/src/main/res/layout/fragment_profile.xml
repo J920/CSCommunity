@@ -28,30 +28,35 @@
                 <ImageView
                     android:id="@+id/app_bar_image"
                     android:layout_width="match_parent"
-                    android:layout_height="195dp"
+                    android:layout_height="108dp"
                     android:scaleType="centerCrop"
-                    android:src="@android:drawable/sym_def_app_icon"
+                    android:src="@drawable/cover"
                     app:layout_collapseMode="pin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/txtProfileName"
-                    android:layout_width="191dp"
-                    android:layout_height="27dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text=""
+                    android:text="اسم المستخدم"
                     android:textColor="?attr/textcolor"
                     android:textSize="@dimen/activity_horizontal_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.502"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+                    app:layout_constraintTop_toBottomOf="@+id/app_bar_image"
+                    app:layout_constraintVertical_bias="0.387" />
 
                 <ImageView
                     android:id="@+id/profile_image"
@@ -60,25 +65,30 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:src="@drawable/progile_pngg"
-                    app:layout_constraintBottom_toBottomOf="@+id/app_bar_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.166" />
+                    app:layout_constraintVertical_bias="0.017" />
 
-                <com.mahfa.dnswitch.DayNightSwitch
-                    android:id="@+id/switch1"
-                    android:layout_width="48dp"
-                    android:layout_height="24dp"
+                <ImageView
+                    android:id="@+id/setting"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="108dp"
+                    android:clickable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.052" />
+                    app:layout_constraintVertical_bias="0.181"
+                    app:srcCompat="@drawable/settings" />
 
 
             </android.support.constraint.ConstraintLayout>
