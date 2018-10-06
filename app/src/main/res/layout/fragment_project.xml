@@ -12,7 +12,7 @@
         android:id="@+id/project_tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/cardbackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0"
@@ -24,6 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="0dp"
+        android:background="?attr/backgroundcolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="?attr/actionMenuTextColor" />
+        app:rippleColor="?attr/buttoncolor" />
 
 </android.support.constraint.ConstraintLayout>

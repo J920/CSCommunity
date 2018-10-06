@@ -1,37 +1,47 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-<!-- Light/Day Mode application theme. -->
-<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-<!-- Customize your theme here. -->
-<item name="colorPrimary">@color/dark_blue</item>
-<item name="colorPrimaryDark">@color/dark_blue</item>
-<item name="colorAccent">@color/dark_blue</item>
+    <!-- Light/Day Mode application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">#ffe</item>
+        <item name="backgroundcolor">@color/white</item>
+        <item name="cardbackground">@color/white</item>
+        <item name="textcolor">#000</item>
+        <item name="tintcolor">@color/whiteGrean</item>
+        <item name="buttoncolor">@color/whiteGrean</item>
+<item name="android:textColorPrimary">#000</item>
+
+        <item name="android:fontFamily">@font/cairo_regular</item>
+
+    </style>
 
 
-<item name="android:fontFamily">@font/cairo_regular</item>
+    <!-- Dark/Night Mode application theme. -->
+    <style name="DarkTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#424242</item>
+        <item name="colorPrimaryDark">#303030</item>
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="backgroundcolor">#303030</item>
+        <item name="cardbackground">#424242</item>
+        <item name="textcolor">#fff</item>
+        <item name="tintcolor">@color/whiteGrean</item>
+        <item name="buttoncolor">@color/whiteGrean</item>
+        <item name="android:textColorPrimary">#fff</item>
 
-</style>
+        <item name="android:fontFamily">@font/cairo_regular</item>
 
+    </style>
 
-<!-- Dark/Night Mode application theme. -->
-<style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
-<!-- Customize your theme here. -->
-<item name="colorPrimary">#151</item>
-<item name="colorPrimaryDark">#141</item>
-<item name="colorAccent">@color/dark_blue</item>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-<item name="android:fontFamily">@font/cairo_regular</item>
-
-</style>
-
-<style name="AppTheme.NoActionBar">
-<item name="windowActionBar">false</item>
-<item name="windowNoTitle">true</item>
-</style>
-
-<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

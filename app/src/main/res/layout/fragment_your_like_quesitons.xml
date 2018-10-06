@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="?attr/textcolor"
         android:text="اهلا من صفحه Like question" />
 
 </android.support.constraint.ConstraintLayout>

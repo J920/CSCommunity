@@ -31,7 +31,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:background="@color/white"
+                    android:background="?attr/backgroundcolor"
                     android:clickable="true"
 
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -47,22 +47,33 @@
         android:id="@+id/question_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
-        android:clickable="true">
+        android:background="?attr/backgroundcolor"
+        android:clickable="true"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <android.support.constraint.ConstraintLayout
-            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".QuestionFragment">
+            tools:context=".QuestionFragment"
+            android:background="?attr/backgroundcolor"
+            >
 
             <!-- TODO: Update blank fragment layout -->
             <TextView
                 android:id="@+id/q_t"
                 android:layout_width="match_parent"
                 android:layout_height="330dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:clickable="true"
-                android:text=" صفحـــه الاسئله " />
+                android:text=" صفحـــه الاسئله "
+                android:background="?attr/backgroundcolor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
