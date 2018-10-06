@@ -31,7 +31,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:background="?attr/backgroundcolor"
+                    android:background="@drawable/rounded"
                     android:clickable="true"
 
                     app:layout_constraintBottom_toBottomOf="parent"

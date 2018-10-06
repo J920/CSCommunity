@@ -20,17 +20,15 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.android.team920.cscommunity.ProfileAdapter;
-
-
-
-
+import com.mahfa.dnswitch.DayNightSwitch;
+import com.mahfa.dnswitch.DayNightSwitchListener;
 
 
 public class ProfileFragment extends Fragment implements AnswerFragment.OnFragmentInteractionListener,
         YourQuestionsFragment.OnFragmentInteractionListener{
 
 
-    private Switch nightMode;
+     DayNightSwitch nightMode;
 
 
 
@@ -94,20 +92,7 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
        // return inflater.inflate(R.layout.fragment_profile, container, false);
     }
-public void refresh(LayoutInflater inflater){
 
-////
-////    FragmentTransaction ft = getFragmentManager().beginTransaction();
-////    ft.detach(this).attach(this).commit();
-//
-//    getFragmentManager()
-//            .beginTransaction()
-//            .detach(this)
-//            .attach(this)
-//            .commit();
-//
-//
-}
 
     @Override
     public void onViewCreated(View view,  Bundle savedInstanceState) {
@@ -115,27 +100,25 @@ public void refresh(LayoutInflater inflater){
 
         super.onViewCreated(view, savedInstanceState);
 
-        nightMode=view.findViewById(R.id.switch1);
+        nightMode= (DayNightSwitch) view.findViewById(R.id.switch1);
        // nightMode.setThumbDrawable(R.drawable.day_icon);
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-
-            nightMode.setChecked(true);
-
-        }else{
-            nightMode.setChecked(false);
-
-        }
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_answer_icon));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
+//        nightMode.setDuration(450);
 
-        nightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+            nightMode.setIsNight(true);
+        }
+
+        nightMode.setListener(new DayNightSwitchListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
+            public void onSwitch(boolean isNight) {
+
+                if(isNight){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
 
@@ -154,18 +137,46 @@ public void refresh(LayoutInflater inflater){
                     getActivity().finish();
 
 
-                    // refresh();
-//                    ProfileFragment fragment = (ProfileFragment)
-//                            getFragmentManager().findFragmentById(R.id.container1);
-//
-//                    getFragmentManager().beginTransaction()
-//                            .detach(fragment)
-//                            .attach(fragment)
-//                            .commit();
 
                 }
+
             }
         });
+
+//        nightMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if(b){
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//
+//
+//
+//
+//                    Intent intent=new Intent(getContext(),MainActivity.class);
+//                    getContext().startActivity(intent);
+//                    getActivity().finish();
+//
+//
+//                }else{
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//
+//                    Intent intent=new Intent(getContext(),MainActivity.class);
+//                    getContext().startActivity(intent);
+//                    getActivity().finish();
+//
+//
+//                    // refresh();
+////                    ProfileFragment fragment = (ProfileFragment)
+////                            getFragmentManager().findFragmentById(R.id.container1);
+////
+////                    getFragmentManager().beginTransaction()
+////                            .detach(fragment)
+////                            .attach(fragment)
+////                            .commit();
+//
+//                }
+//            }
+//        });
 
         final ViewPager viewPager = view.findViewById(R.id.container_profile);
         ProfileAdapter adapter = new ProfileAdapter(getFragmentManager(), tabLayout.getTabCount());

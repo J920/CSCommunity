@@ -1,10 +1,12 @@
 package com.android.team920.cscommunity;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -69,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            //navigation.setBackgroundColor(R.attr.cardbackground);
+            navigation.setBackgroundColor(Color.parseColor("#303030"));
+            navigation.setAlpha(1f);
+        }
+
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // this line to tell the navigation to start from the profile
