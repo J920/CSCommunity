@@ -1,31 +1,21 @@
 package com.android.team920.cscommunity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.app.AppCompatDialog;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.Switch;
-
-import com.android.team920.cscommunity.ProfileAdapter;
-import com.mahfa.dnswitch.DayNightSwitch;
-import com.mahfa.dnswitch.DayNightSwitchListener;
 
 
-public class ProfileFragment extends Fragment implements AnswerFragment.OnFragmentInteractionListener,
+public class ProfileFragment extends Fragment implements PostFragment.OnFragmentInteractionListener,
         YourQuestionsFragment.OnFragmentInteractionListener{
 
 
@@ -73,6 +63,11 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
                  Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.DarkTheme);
 
+
+//            Resources res = getContext().getResources();
+//            final int newColor = res.getColor(R.color.whiteGrean);
+//            setting.setColorFilter(newColor, Mode.SRC_ATOP);
+
     // clone the inflater using the ContextThemeWrapper
      inflater = inflater.cloneInContext(contextThemeWrapper);
             return inflater.inflate(R.layout.fragment_profile, container, false);
@@ -83,6 +78,10 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
         }else{
              Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
 
+
+//            Resources res = getContext().getResources();
+//            final int newColor = res.getColor(R.color.black);
+//            setting.setColorFilter(newColor, Mode.SRC_ATOP);
             // clone the inflater using the ContextThemeWrapper
             inflater = inflater.cloneInContext(contextThemeWrapper);
             return inflater.inflate(R.layout.fragment_profile, container, false);
@@ -107,9 +106,14 @@ public class ProfileFragment extends Fragment implements AnswerFragment.OnFragme
 
         setting= view.findViewById(R.id.setting);
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_answer_icon));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon));
+//        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.edit).setText("تدويناتي"));
+//        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon).setText("اسئلتي و اجوبتي"));
+//        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_like_icon).setText("المفضلة"));
+
+        tabLayout.addTab(tabLayout.newTab().setText("تدويناتي"));
+        tabLayout.addTab(tabLayout.newTab().setText("اسئلتي و اجوبتي"));
+        tabLayout.addTab(tabLayout.newTab().setText("المفضلة"));
+
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
         setting.setOnClickListener(new View.OnClickListener() {

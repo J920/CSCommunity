@@ -3,9 +3,6 @@ package com.android.team920.cscommunity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 
 
 public class ProfileAdapter extends FragmentStatePagerAdapter{
@@ -28,7 +25,7 @@ public class ProfileAdapter extends FragmentStatePagerAdapter{
             {
 
                 case 0:
-                    AnswerFragment tap1 = new AnswerFragment();
+                    PostFragment tap1 = new PostFragment();
                     return  tap1;
 
                 case 1:

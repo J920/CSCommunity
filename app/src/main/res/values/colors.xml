@@ -5,6 +5,7 @@
     <color name="colorAccent">#90A4AE</color>
     <color name="colorBack">#F6F6F6</color>
     <color name="dark_blue">#54D6A4</color>
+    <color name="navigationBarColor">#F6F6F6</color>
 
 
     <color name="colorsBack">#F6F6F6</color>
@@ -18,5 +19,6 @@
 
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
 
 </resources>

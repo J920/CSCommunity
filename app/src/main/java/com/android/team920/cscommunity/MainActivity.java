@@ -30,20 +30,6 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                     return true;
 
-                //
-                case R.id.navigation_project:
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.container1,new ProjectFragment(),"ProjectFragment()")
-                            .commit();
-                    return true;
-                case R.id.navigation_quistion:
-                    getSupportFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.container1,new QuestionFragment(),"QuestionFragment()")
-                            .commit();
-                    return true;
-
                 case R.id.navigation_trophy:
                     getSupportFragmentManager()
                             .beginTransaction()
@@ -51,12 +37,30 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                     return true;
 
-                case R.id.navigation_challing:
+                //
+                case R.id.navigation_quistion:
                     getSupportFragmentManager()
                             .beginTransaction()
-                            .add(R.id.container1,new ChallengeFragment(),"ChallengeFragment()")
+                            .replace(R.id.container1,new QuestionFragment(),"QuestionFragment()")
                             .commit();
                     return true;
+
+                case R.id.navigation_home:
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.container1,new HomeFragment(),"HomeFragment()")
+                            .commit();
+                    return true;
+
+
+
+
+//                case R.id.navigation_challing:
+//                    getSupportFragmentManager()
+//                            .beginTransaction()
+//                            .add(R.id.container1,new ChallengeFragment(),"ChallengeFragment()")
+//                            .commit();
+//                    return true;
             }
             return false;
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             //navigation.setAlpha(1f);
         }else{
 
-            navigation.setBackgroundColor(Color.parseColor("#ffffff"));
+            navigation.setBackgroundColor(Color.parseColor("#F6F6F6"));
 
         }
 
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // this line to tell the navigation to start from the profile
-        navigation.setSelectedItemId(R.id.navigation_profile);
+        navigation.setSelectedItemId(R.id.navigation_home);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
