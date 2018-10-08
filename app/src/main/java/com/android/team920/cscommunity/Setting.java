@@ -14,12 +14,13 @@ import com.mahfa.dnswitch.DayNightSwitchListener;
 public class Setting extends AppCompatActivity {
     private DayNightSwitch nightMode;
     private ConstraintLayout background;
+    public static int intent=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+intent++;
 
 
 

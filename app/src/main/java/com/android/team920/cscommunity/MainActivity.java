@@ -1,18 +1,24 @@
 package com.android.team920.cscommunity;
 
 import android.app.Activity;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private ConstraintLayout background;
+    private FrameLayout viewPager;
 
 
 
@@ -75,13 +81,29 @@ public class MainActivity extends AppCompatActivity {
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(navigation);
+        navigation.setItemIconTintList(null);
+        background= findViewById(R.id.container);
+        viewPager= findViewById(R.id.container1);
+
+
+
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             //navigation.setBackgroundColor(R.attr.cardbackground);
             navigation.setBackgroundColor(Color.parseColor("#424242"));
+            navigation.setItemTextColor(ColorStateList.valueOf(Color.parseColor("#F6F6F6")));
+            background.setBackgroundColor(Color.parseColor("#303030"));
+            viewPager.setBackgroundColor(Color.parseColor("#303030"));
+
             //navigation.setAlpha(1f);
         }else{
 
             navigation.setBackgroundColor(Color.parseColor("#F6F6F6"));
+            navigation.setItemTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+            background.setBackgroundColor(Color.parseColor("#ffffff"));
+            viewPager.setBackgroundColor(Color.parseColor("#ffffff"));
+
+
 
         }
 
@@ -89,9 +111,19 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         // this line to tell the navigation to start from the profile
-        navigation.setSelectedItemId(R.id.navigation_home);
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        if(Setting.intent==0)
+        navigation.setSelectedItemId(R.id.navigation_home);
+
+
+
+    }
 }

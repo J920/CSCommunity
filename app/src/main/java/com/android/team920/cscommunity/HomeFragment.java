@@ -1,12 +1,18 @@
 package com.android.team920.cscommunity;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -26,6 +32,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private TextView text;
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,7 +74,27 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        text=view.findViewById(R.id.text_home);
+
+
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            //navigation.setBackgroundColor(R.attr.cardbackground);
+            text.setTextColor(ColorStateList.valueOf(Color.parseColor("#F6F6F6")));
+
+
+            //navigation.setAlpha(1f);
+        }else{
+
+            text.setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+
+
+
+        }
+    }
 
     /**
      * This interface must be implemented by activities that contain this
