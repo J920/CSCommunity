@@ -42,31 +42,31 @@ if (userName!=null)
 
 
 
-        nightMode.setDuration(800);
-
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-            nightMode.setIsNight(true);
-        }
-
-        nightMode.setListener(new DayNightSwitchListener() {
-            @Override
-            public void onSwitch(boolean isNight) {
-
-                if(isNight){
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    background.setBackgroundColor(Color.parseColor("#303030"));
-
-
-
-
-                }else{
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    background.setBackgroundColor(Color.parseColor("#ffffff"));
-
-                }
-
-            }
-        });
+//        nightMode.setDuration(800);
+//
+//        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
+//            nightMode.setIsNight(true);
+//        }
+//
+//        nightMode.setListener(new DayNightSwitchListener() {
+//            @Override
+//            public void onSwitch(boolean isNight) {
+//
+//                if(isNight){
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+//                    background.setBackgroundColor(Color.parseColor("#303030"));
+//
+//
+//
+//
+//                }else{
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+//                    background.setBackgroundColor(Color.parseColor("#ffffff"));
+//
+//                }
+//
+//            }
+//        });
 
         userNameProfile = (EditText) findViewById(R.id.textUserName);
         if(savedInstanceState==null){

@@ -1,27 +1,17 @@
 package com.android.team920.cscommunity;
 
-
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> {
-
+public abstract class TrophyMonthAdapter extends RecyclerView.Adapter<TrophyMonthAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<String> itemList = new ArrayList<>();
@@ -44,7 +34,7 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
     }
 
 
-    public postAdapter(Context mContext, List<String> itemsList) {
+    public TrophyMonthAdapter(Context mContext, List<String> itemsList) {
         this.mContext = mContext;
         this.itemList = itemsList;
     }
@@ -52,10 +42,10 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
 
 
 
-    @Override
-    public postAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        @Override
+    public TrophyMonthAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.post_card, parent, false);
+                .inflate(R.layout.trophy_card, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -66,10 +56,10 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
 
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder,  int position) {
-         String item = itemList.get(position);
+    public void onBindViewHolder(final TrophyMonthAdapter.MyViewHolder holder, int position) {
+        String item = itemList.get(position);
         holder.title.setText(itemList.get(position));
-           }
+    }
 
 
 
@@ -80,7 +70,6 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
     public int getItemCount() {
         return itemList.size();
     }
-
 
 
 
