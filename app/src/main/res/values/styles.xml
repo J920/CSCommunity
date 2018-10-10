@@ -3,18 +3,16 @@
     <!-- Light/Day Mode application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryDark">@color/white</item>
-        <item name="colorAccent">@color/white</item>
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/dark_blue</item>
+        <item name="android:fontFamily">@font/cairo_regular</item>
         <item name="backgroundcolor">@color/white</item>
         <item name="cardbackground">@color/white</item>
         <item name="textcolor">#000</item>
         <item name="tintcolor">@color/whiteGrean</item>
         <item name="buttoncolor">@color/whiteGrean</item>
-<item name="android:textColorPrimary">#515151</item>
-
-        <item name="android:fontFamily">@font/cairo_regular</item>
-
+        <item name="android:textColorPrimary">#000</item>
     </style>
 
 

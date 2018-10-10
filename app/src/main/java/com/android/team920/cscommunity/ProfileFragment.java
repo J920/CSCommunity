@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class ProfileFragment extends Fragment implements PostFragment.OnFragmentInteractionListener,
@@ -21,6 +22,7 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
 
      //private DayNightSwitch nightMode;
     ImageView setting;
+    TextView profileName ;
 
 
 
@@ -105,6 +107,7 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
        // nightMode.setThumbDrawable(R.drawable.day_icon);
 
         setting= view.findViewById(R.id.setting);
+        profileName = view.findViewById(R.id.txtProfileName2);
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
 //        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.edit).setText("تدويناتي"));
 //        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon).setText("اسئلتي و اجوبتي"));
@@ -120,8 +123,9 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getContext(),Setting.class);
-                startActivity(i);
+                Intent intent = new Intent(getContext(),Setting.class);
+                intent.putExtra("Profile Name",profileName.getText());
+                startActivity(intent);
 
             }
         });

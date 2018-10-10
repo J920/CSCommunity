@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+import android.widget.EditText;
 
 import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
@@ -15,13 +16,19 @@ public class Setting extends AppCompatActivity {
     private DayNightSwitch nightMode;
     private ConstraintLayout background;
     public static int intent=0;
+    EditText userNameProfile;
+    String userName;
+    Bundle b ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-intent++;
 
+
+intent++;
+if (userName!=null)
 
 
         nightMode= (DayNightSwitch) findViewById(R.id.switch1);
@@ -60,6 +67,20 @@ intent++;
 
             }
         });
+
+        userNameProfile = (EditText) findViewById(R.id.textUserName);
+        if(savedInstanceState==null){
+            b = getIntent().getExtras();
+
+            if (b == null) {
+
+
+            } else {
+                String userName = b.getString("Profile Name");
+                userNameProfile.setText(userName);
+
+            }
+        }
 
 
     }
