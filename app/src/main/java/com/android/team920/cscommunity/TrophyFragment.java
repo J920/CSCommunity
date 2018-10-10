@@ -105,6 +105,11 @@ public class TrophyFragment extends Fragment {
 
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+
+
+
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
