@@ -20,7 +20,7 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
 
 
      //private DayNightSwitch nightMode;
-    ImageView setting;
+    private ImageView setting;
 
 
 
@@ -97,8 +97,6 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
 
     @Override
     public void onViewCreated(View view,  Bundle savedInstanceState) {
-
-
         super.onViewCreated(view, savedInstanceState);
 
        // nightMode= (DayNightSwitch) view.findViewById(R.id.switch1);
