@@ -18,7 +18,7 @@ public class Setting extends AppCompatActivity {
     public static int intent=0;
     EditText userNameProfile;
     String userName;
-    Bundle b ;
+    Intent i ;
 
 
     @Override
@@ -28,7 +28,7 @@ public class Setting extends AppCompatActivity {
 
 
 intent++;
-if (userName!=null)
+//if (userName!=null)
 
 
         nightMode= (DayNightSwitch) findViewById(R.id.switch1);
@@ -37,46 +37,47 @@ if (userName!=null)
 
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
 
+            nightMode.setIsNight(true);
+
             background.setBackgroundColor(Color.parseColor("#303030"));
+
         }
 
 
 
-//        nightMode.setDuration(800);
-//
-//        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
-//            nightMode.setIsNight(true);
-//        }
-//
-//        nightMode.setListener(new DayNightSwitchListener() {
-//            @Override
-//            public void onSwitch(boolean isNight) {
-//
-//                if(isNight){
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//                    background.setBackgroundColor(Color.parseColor("#303030"));
-//
-//
-//
-//
-//                }else{
-//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//                    background.setBackgroundColor(Color.parseColor("#ffffff"));
-//
-//                }
-//
-//            }
-//        });
+        nightMode.setDuration(800);
+
+
+
+        nightMode.setListener(new DayNightSwitchListener() {
+            @Override
+            public void onSwitch(boolean isNight) {
+
+                if(isNight){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    background.setBackgroundColor(Color.parseColor("#303030"));
+
+
+
+
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    background.setBackgroundColor(Color.parseColor("#ffffff"));
+
+                }
+
+            }
+        });
 
         userNameProfile = (EditText) findViewById(R.id.textUserName);
         if(savedInstanceState==null){
-            b = getIntent().getExtras();
+            i = this.getIntent();
 
-            if (b == null) {
+            if (i == null) {
 
 
             } else {
-                String userName = b.getString("Profile Name");
+                String userName = i.getStringExtra("Profile Name");
                 userNameProfile.setText(userName);
 
             }
