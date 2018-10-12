@@ -86,6 +86,20 @@ public class HomeFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("عـام"));
         tabLayout.setTabGravity( TabLayout.GRAVITY_FILL);
 
+        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+            //navigation.setBackgroundColor(R.attr.cardbackground);
+           // text.setTextColor(ColorStateList.valueOf(Color.parseColor("#F6F6F6")));
+
+
+            //navigation.setAlpha(1f);
+        }else{
+
+           // text.setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
+
+
+
+        }
+
         final ViewPager viewPager = view.findViewById(R.id.container_home);
         HomeAdapter adapter = new HomeAdapter(getFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -117,19 +131,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            //navigation.setBackgroundColor(R.attr.cardbackground);
-            text.setTextColor(ColorStateList.valueOf(Color.parseColor("#F6F6F6")));
 
-
-            //navigation.setAlpha(1f);
-        }else{
-
-            text.setTextColor(ColorStateList.valueOf(Color.parseColor("#000000")));
-
-
-
-        }
     }
 
     /**
