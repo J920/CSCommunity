@@ -32,5 +32,6 @@
         completions."
     </string>
     <string name="title_activity_main_buyer">MainBuyerActivity</string>
+    <string name="textview">TextView</string>
 
 </resources>
