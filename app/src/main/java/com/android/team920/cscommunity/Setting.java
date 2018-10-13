@@ -1,6 +1,7 @@
 package com.android.team920.cscommunity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -13,12 +14,15 @@ import com.mahfa.dnswitch.DayNightSwitch;
 import com.mahfa.dnswitch.DayNightSwitchListener;
 
 public class Setting extends AppCompatActivity {
-    private DayNightSwitch nightMode;
+    private static DayNightSwitch nightMode;
     private ConstraintLayout background;
     public static int intent=0;
     EditText userNameProfile;
     String userName;
     Intent i ;
+    SharedPreferences settings;
+    SharedPreferences.Editor editor;
+
 
 
     @Override
@@ -26,7 +30,8 @@ public class Setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-
+        settings = getSharedPreferences("NightMode", 0);
+        editor = settings.edit();
 intent++;
 //if (userName!=null)
 
@@ -40,6 +45,8 @@ intent++;
             nightMode.setIsNight(true);
 
             background.setBackgroundColor(Color.parseColor("#303030"));
+
+
 
         }
 
@@ -57,12 +64,17 @@ intent++;
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     background.setBackgroundColor(Color.parseColor("#303030"));
 
+                    editor.putBoolean("NightOn",AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES);
+                    editor.commit();
 
 
 
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     background.setBackgroundColor(Color.parseColor("#ffffff"));
+
+                    editor.putBoolean("NightOn",AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES);
+                    editor.commit();
 
                 }
 

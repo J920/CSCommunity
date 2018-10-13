@@ -1,6 +1,7 @@
 package com.android.team920.cscommunity;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private ConstraintLayout background;
     private FrameLayout viewPager;
+    SharedPreferences settings;
 
 
 
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences settings = getSharedPreferences("NightMode", 0);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -87,6 +90,16 @@ public class MainActivity extends AppCompatActivity {
         viewPager= findViewById(R.id.container1);
 
 
+        if(settings.getBoolean("NightOn", false)){
+
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+        }
+
+
+
+
+
 
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             //navigation.setBackgroundColor(R.attr.cardbackground);
@@ -94,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             navigation.setItemTextColor(ColorStateList.valueOf(Color.parseColor("#F6F6F6")));
             background.setBackgroundColor(Color.parseColor("#303030"));
             viewPager.setBackgroundColor(Color.parseColor("#303030"));
+
 
             //navigation.setAlpha(1f);
         }else{

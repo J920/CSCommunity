@@ -105,7 +105,7 @@ public class ProfileFragment extends Fragment implements PostFragment.OnFragment
        // nightMode.setThumbDrawable(R.drawable.day_icon);
 
         setting= view.findViewById(R.id.setting);
-        profileName = view.findViewById(R.id.txtProfileName2);
+        profileName = view.findViewById(R.id.txtProfileName);
         TabLayout tabLayout = view.findViewById(R.id.profile_tabs);
 //        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.edit).setText("تدويناتي"));
 //        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.profile_question_icon).setText("اسئلتي و اجوبتي"));

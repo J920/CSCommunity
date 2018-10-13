@@ -88,12 +88,12 @@ public class WeekTrophyFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerView = view.findViewById(R.id.post_recycler);
+        recyclerView = view.findViewById(R.id.trophy_week_recycler);
         itemList = new ArrayList<>();
-        TrophyWeekAdapter = new TrophyWeekAdapter(this.getContext(), itemList);
+        TrophyWeekAdapter = new TrophyWeekAdapter(view.getContext(), itemList);
 
 
-        LinearLayoutManager mLayoutManager = new GridLayoutManager(this.getContext(), 1);
+        LinearLayoutManager mLayoutManager = new GridLayoutManager(view.getContext(), 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
