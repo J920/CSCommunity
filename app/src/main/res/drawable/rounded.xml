@@ -2,7 +2,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android" >
 
 
-    <solid android:color="?attr/backgroundcolor" />
+    <solid android:color="@color/navigationBarColor" />
 
     <padding
         android:left="1dp"
