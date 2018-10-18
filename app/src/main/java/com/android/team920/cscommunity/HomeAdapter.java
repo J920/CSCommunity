@@ -20,11 +20,11 @@ public class HomeAdapter extends FragmentStatePagerAdapter {
         {
 
             case 0:
-                PublicFragment tap1 = new PublicFragment();
+                FollowerFragment tap1 = new FollowerFragment();
                 return  tap1;
 
             case 1:
-                FollowerFragment tap2 = new FollowerFragment();
+                PublicFragment tap2 = new PublicFragment();
                 return tap2;
 
             default:
