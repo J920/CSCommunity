@@ -21,26 +21,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link PublicFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link PublicFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PublicFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
     private List<String> itemList;
     RecyclerView recyclerView;
-    private HomeCardAdapter HomeCardAdapter;
+    private HomePublicAdapter HomePublicAdapter;
     private OnFragmentInteractionListener mListener;
 
 
@@ -88,14 +79,14 @@ public class PublicFragment extends Fragment {
         itemList.add("سلام عليكم ورحمه الله وبركاته \n دوره برمجه andriod & ios \n");
         itemList.add("سلام عليكم ورحمه الله وبركاته \n دوره برمجه andriod & ios \n");
 
-        HomeCardAdapter = new HomeCardAdapter(this.getContext(), itemList);
+        HomePublicAdapter = new HomePublicAdapter(this.getContext(), itemList);
 
 
         LinearLayoutManager mLayoutManager = new GridLayoutManager(this.getContext(), 1);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new PostFragment.GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(HomeCardAdapter);
+        recyclerView.setAdapter(HomePublicAdapter);
 
         //Collections.shuffle(itemList);
 
@@ -104,7 +95,7 @@ public class PublicFragment extends Fragment {
 
 
 
-        HomeCardAdapter.notifyDataSetChanged();
+        HomePublicAdapter.notifyDataSetChanged();
 
 
 
