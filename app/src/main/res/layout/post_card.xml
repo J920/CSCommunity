@@ -29,6 +29,7 @@
                 android:layout_marginLeft="-5dp"
                 android:layout_marginRight="-5dp"
                 android:layout_marginTop="8dp"
+                
                 android:background="@drawable/bottom_toolbar"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +42,16 @@
 
 
                     <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="1dp"
+                        card_view:layout_constraintStart_toStartOf="parent"
+                        card_view:layout_constraintTop_toTopOf="parent"
+                        card_view:srcCompat="@drawable/block" />
+
+                    <ImageView
                         android:id="@+id/post_like_img"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -48,7 +59,7 @@
                         android:src="@drawable/like"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         card_view:layout_constraintEnd_toEndOf="parent"
-                        card_view:layout_constraintHorizontal_bias="0.216"
+                        card_view:layout_constraintHorizontal_bias="0.335"
                         card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"
                         card_view:layout_constraintVertical_bias="0.666" />
@@ -63,9 +74,10 @@
                         android:layout_marginTop="8dp"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         card_view:layout_constraintEnd_toEndOf="parent"
-                        card_view:layout_constraintHorizontal_bias="0.498"
+                        card_view:layout_constraintHorizontal_bias="0.623"
                         card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"
+                        card_view:layout_constraintVertical_bias="0.545"
                         card_view:srcCompat="@drawable/retweet" />
 
                     <ImageView
@@ -78,9 +90,10 @@
                         android:layout_marginTop="8dp"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         card_view:layout_constraintEnd_toEndOf="parent"
-                        card_view:layout_constraintHorizontal_bias="0.799"
+                        card_view:layout_constraintHorizontal_bias="0.897"
                         card_view:layout_constraintStart_toStartOf="parent"
                         card_view:layout_constraintTop_toTopOf="parent"
+                        card_view:layout_constraintVertical_bias="0.545"
                         card_view:srcCompat="@drawable/replay" />
 
                     <TextView
@@ -93,6 +106,18 @@
                         android:text="0"
                         card_view:layout_constraintBottom_toBottomOf="parent"
                         card_view:layout_constraintStart_toEndOf="@+id/post_rePost_img"
+                        card_view:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/post_numb_of_reporting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="0"
+                        card_view:layout_constraintBottom_toBottomOf="parent"
+                        card_view:layout_constraintStart_toEndOf="@+id/imageView8"
                         card_view:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -161,25 +186,6 @@
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintVertical_bias="0.52" />
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="2dp"
-                card_view:layout_constraintStart_toStartOf="parent"
-                card_view:layout_constraintTop_toTopOf="parent"
-                card_view:srcCompat="@drawable/reporting" />
-
-            <TextView
-                android:id="@+id/post_numb_of_reporting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="0"
-                card_view:layout_constraintStart_toEndOf="@+id/imageView8"
-                card_view:layout_constraintTop_toTopOf="parent" />
 
 
         </android.support.constraint.ConstraintLayout>
