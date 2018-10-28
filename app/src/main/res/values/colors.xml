@@ -2,23 +2,23 @@
 <resources>
     <color name="colorPrimary">#0093D1</color>
     <color name="colorPrimaryDark">#004C70</color>
-    <color name="colorAccent">#90A4AE</color>
-    <color name="colorBack">#F6F6F6</color>
-    <color name="dark_blue">#54D6A4</color>
+    <color name="colorAccent">#90a4ae</color>
+    <color name="colorBack">#d2d2d2</color>
+    <color name="dark_blue">#54d6a4</color>
     <color name="navigationBarColor">#F6F6F6</color>
 
 
-    <color name="colorsBack">#F6F6F6</color>
+    <color name="colorsBack">#f6f6f6</color>
     <color name="colorsPrimary">#F50057</color>
     <color name="colorsPrimaryDark">#F50057</color>
     <color name="colorsAccent">#FF4081</color>
     <color name="viewBg">#f1f5f8</color>
-    <color name="album_title">#4c4c4c</color>
+    <color name="album_title">#f6f6f6</color>
     <color name="orange">#D58512</color>
     <color name="whiteGrean">#54D6A4</color>
 
 
     <color name="white">#ffffff</color>
-    <color name="black">#000000</color>
+    <color name="black">#ffd000</color>
 
 </resources>
