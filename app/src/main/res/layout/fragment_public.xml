@@ -4,17 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostFragment"
+    tools:context=".Profile.YourPostFragment"
     android:backgroundTint="?attr/backgroundcolor"
 
-    >
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/public_recycler"
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/question_scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundcolor"
+        android:clickable="true"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Question.QuestionFragment"
+            android:background="?attr/backgroundcolor"
+            >
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/public_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
 
 </LinearLayout>
